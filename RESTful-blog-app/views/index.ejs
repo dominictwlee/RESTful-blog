@@ -1,0 +1,27 @@
+<% include ./partials/header %>
+
+
+<div class="ui text container raised segment">
+<div class="ui divided items">
+  <% for (let blog of blogs) { %>
+      <div class="item">
+        <div class="ui rounded small image">
+          <img src="<%= blog.image %>">
+        </div>
+        <div class="content">
+          <div class="meta">
+            <span><%= blog.created %></span>
+          </div>
+          <div class="description">
+            <h2><%= blog.title %></h2>
+            <p><%= blog.body.substring(0, 100) %>...</p>
+          </div>
+          <div class="extra">
+            <a class="ui tiny basic black button" href="/blogs/<%= blog._id %>">Read More</a>
+          </div>
+        </div>
+      </div>
+  <% } %>
+</div>
+</div>
+<% include ./partials/footer %>
